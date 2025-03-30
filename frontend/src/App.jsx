@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="min-h-screen bg-base-200 transition-colors duration-300" data-theme="forest">
+    <div className="min-h-screen bg-base-200 transition-colors duration-300">
       <NavBar />
 
       <Routes>
