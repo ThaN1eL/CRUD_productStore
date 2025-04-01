@@ -1,11 +1,16 @@
-import React from 'react'
+import { useEffect } from 'react';
+import { useProductStore } from '../store/useProductStore';
 
 function HomePage() {
-  return (
-    <div>
-      HomePage
-    </div>
-  )
+  const { products, loading, error, fetchProducts } = useProductStore();
+  
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
+
+  console.log('products',products);
+
+  return <div>HomePage</div>
 }
 
-export default HomePage
+export default HomePage;

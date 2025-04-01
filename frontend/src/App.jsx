@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 
 import { Routes, Route } from 'react-router-dom';
-import { useThemeStore } from './store/useProductStore';
+import { useThemeStore } from './store/useThemeStore';
 
 function App() {
   const {theme} =useThemeStore()

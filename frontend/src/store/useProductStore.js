@@ -1,9 +1,24 @@
-import {create} from "zustand"
+import {create} from 'zustand';
+import axios from 'axios';
 
-export const useThemeStore = create ((set) => ({
-    theme: localStorage.getItem("preferred-theme") || "forest",
-    setTheme: (theme) => {
-        localStorage.setItem("preferred-theme", theme);
-        set({ theme });
+const BASE_URL = "http://localhost:5173";
+
+export const useProductStore = create((set,get) => ({
+    //Products state
+    products:[],
+    loading:false,
+    error:null,
+
+    fetchProducts: async () => {
+        set({ loading: true });
+        try {
+            const response = await axios.get(`${BASE_URL}/api/products`);
+            set({ products: response.data.data, error: null });            
+        } catch(err) {
+            if (err.status == 429) set({ error: "Rate limit exceeded"});
+            else set({ error: "Something went wrong"});
+        } finally {
+            set({ loading:false });
+        }
     },
 }));
