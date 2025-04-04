@@ -4,7 +4,7 @@ import "dotenv/config";
 
 //Init Arcjet
 
-export const aj = ({
+export const aj = arcjet({
     key: process.env.ARCJET_KEY,
     characteristics:["ip.src"],
     rules: [
@@ -22,9 +22,9 @@ export const aj = ({
 
         tokenBucket({
             mode:"LIVE",
-            refillRate:"5",
-            interval:"10",
-            capacity:"10",
+            refillRate:5,
+            interval:10,
+            capacity:10,
         }),
     ],
 });

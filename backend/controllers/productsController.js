@@ -93,7 +93,7 @@ export const deleteProduct = async (req, res) => {
             });
         }
 
-        res.status(200).json ({ success: true, data: deleteProduct[0] });
+        res.status(200).json ({ success: true, data: deletedProduct[0] });
     }catch(error){
         console.log(" Error in deleteProduct function", error);
         res.status(500).json({ success: false, message: "Internal Server Error! "});

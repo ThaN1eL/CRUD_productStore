@@ -41,14 +41,14 @@ app.use(async (req, res, next) => {
         }
 
         // check for spoofed bots
-        if (decision.result.some((result) => result.reason.isBot() && result.reason.isSpoofed())) {
-            res.status(403).json({ error:"Spoofed bots detected" });
+        if (decision.results.some((result) => result.reason.isBot() && result.reason.isSpoofed())) {
+            res.status(403).json({ error: "Spoofed bots detected" });
             return;
         }
 
       next()
     } catch(error) {
-        console.log("Arcjet Error". error);
+        console.log("Arcjet Error", error);
         next(error);
     }
 });
