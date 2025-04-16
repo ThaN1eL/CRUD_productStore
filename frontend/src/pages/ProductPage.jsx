@@ -1,11 +1,24 @@
-import React from 'react'
+import { useProductStore } from "../store/useProductStore"
 
 function ProductPage() {
-  return (
-    <div>
-      ProductPage
-    </div>
-  )
+  const {
+    currentProduct,
+    formData,
+    setFormData,
+    loading,
+    error,
+    fetchProduct,
+    upadateProduct,
+    deleteProduct,
+  } = useProductStore()
+  const navigate = useNavigate()
+  const {id} = useParams()
+
+  
+
+
+
+  return  <div>ProductPage</div>
 }
 
 export default ProductPage
