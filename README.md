@@ -13,7 +13,6 @@ PGDATABASE = ...
 ARCJET_KEY = ...
 ARCJET_ENV = development
 -------------------------------
-<h3 align="center">Source</h3>
 ARCJET (https://arcjet.com/)
 PG data from Neon POSGRESQL
 ```
